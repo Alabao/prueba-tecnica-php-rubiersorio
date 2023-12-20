@@ -11,6 +11,11 @@ class UserTest extends TestCase
         $this->user = new User(1,'juan', 'juan@gmail.com', 'passJuan');
     }
 
+    protected function tearDown(): void
+    {
+        $this->user = null;
+    }
+
     public function testGetId()
     {
         $this->assertSame(1, $this->user->getId());
