@@ -4,61 +4,55 @@ use PHPUnit\Framework\TestCase;
 
 class UserTest extends TestCase
 {
-    private static function getUserForTest():User
+    private ?User $user;
+
+    protected function setUp(): void
     {
-        return new User(1,'juan', 'juan@gmail.com', 'passJuan');
+        $this->user = new User(1,'juan', 'juan@gmail.com', 'passJuan');
     }
 
     public function testGetId()
     {
-        $user = self::getUserForTest();
-        $this->assertSame(1, $user->getId());
+        $this->assertSame(1, $this->user->getId());
     }
 
     public function testGetUsername()
     {
-        $user = self::getUserForTest();
-        $this->assertSame('juan', $user->getUsername());
+        $this->assertSame('juan', $this->user->getUsername());
     }
 
     public function testSetUsername()
     {
-        $user = self::getUserForTest();
-        $user->setUsername('pedro');
-        $this->assertSame('pedro', $user->getUsername());
+        $this->user->setUsername('pedro');
+        $this->assertSame('pedro', $this->user->getUsername());
     }
 
     public function testGetPassword()
     {
-        $user = self::getUserForTest();
-        $this->assertSame('passJuan', $user->getPassword());
+        $this->assertSame('passJuan', $this->user->getPassword());
     }
 
     public function testSetPassword()
     {
-        $user = self::getUserForTest();
-        $user->setPassword('newPassword');
-        $this->assertSame('newPassword', $user->getPassword());
+        $this->user->setPassword('newPassword');
+        $this->assertSame('newPassword', $this->user->getPassword());
     }
 
     public function testGetEmail()
     {
-        $user = self::getUserForTest();
-        $this->assertSame('juan@gmail.com', $user->getEmail());
+        $this->assertSame('juan@gmail.com', $this->user->getEmail());
     }
 
     public function testSetEmail()
     {
-        $user = self::getUserForTest();
-        $user->setEmail('laura@gmail.com');
-        $this->assertSame('laura@gmail.com', $user->getEmail());
+        $this->user->setEmail('laura@gmail.com');
+        $this->assertSame('laura@gmail.com', $this->user->getEmail());
     }
 
     public function testSetEmailBad()
     {
-        $user = self::getUserForTest();
         $this->expectException(InvalidArgumentException::class);
-        $user->setEmail('laura');
+        $this->user->setEmail('laura');
     }
 }
 

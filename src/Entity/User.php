@@ -47,4 +47,11 @@ final class User
     {
         $this->password = $password;
     }
+
+    public function __toString(): string
+    {
+        return $this->getId() . $this->getUsername() . $this->getEmail() . $this->getPassword();
+    }
+
+
 }
