@@ -1,5 +1,8 @@
 <testsuites>
-    <testsuite name="prueba_tecnica-php-rubiersorio">
-        <directory>tests</directory>
+    <testsuite name="entity">
+        <directory phpVersion="8.3.0">tests/Entity/</directory>
+    </testsuite>
+    <testsuite name="repository">
+        <directory phpVersion="8.3.0">tests/Repository/</directory>
     </testsuite>
 </testsuites>
