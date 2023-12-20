@@ -31,7 +31,6 @@ class UserController
     public function getUser()
     {
         $id = $_GET['id'];
-        print_r(is_int($id));
         if (is_numeric($id))
             $this->repo->getUserById($id);
         else

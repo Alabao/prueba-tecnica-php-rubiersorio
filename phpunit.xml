@@ -5,4 +5,7 @@
     <testsuite name="repository">
         <directory phpVersion="8.3.0">tests/Repository/</directory>
     </testsuite>
+    <testsuite name="controller">
+        <directory phpVersion="8.3.0">tests/Controller/</directory>
+    </testsuite>
 </testsuites>
