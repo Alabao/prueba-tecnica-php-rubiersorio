@@ -3,8 +3,6 @@
 namespace Controller;
 
 use GuzzleHttp\Exception\ServerException;
-use http\Client;
-use http\Params;
 use PHPUnit\Framework\TestCase;
 
 class UserControllerTest extends TestCase
