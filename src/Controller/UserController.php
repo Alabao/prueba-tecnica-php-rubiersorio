@@ -28,7 +28,10 @@ class UserController
         return;
     }
 
-    public function getUser()
+    /**
+     * @throws \UserDoesNotExistException
+     */
+    public function getUser(): void
     {
         $id = $_GET['id'];
         if (is_numeric($id))
